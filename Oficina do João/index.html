@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang=pt-br">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
     <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Oficina do João</title>
 </head>
@@ -24,11 +25,13 @@
             </div>
         </div>
 
-        <div class="dropdown">
-            <button onclick="" class="dropbtn">Dimensionamento do resistor que
+        <div class="dropdown2">
+            <button onclick="myFunction2()" class="dropbtn2">Dimensionamento do resistor que
                 acompanha o led</button>
-            <div id="myDropdown" class="dropdown-content">
-
+            <div id="myDropdown2" class="dropdown-content2">
+                <a href="#montar" id="serieBT" onclick="abrirMontar()">Montar com LED e Bateria</a>
+                <a href="#corrente" id="parareloBT " onclick="abrirCorrente()">Descobrir valor da corrente
+                    ou da tensão</a>
             </div>
         </div>
         <div class="dropdown">
@@ -45,119 +48,18 @@
         <p>
         <h1>Informe os Ohm (Ω)</h1>
         <h2>Série</h2>
-        <h3>Informe quantos Resistores você quer nesse circuito</h3>
-        <select id="series" style="height: 50px; width: 50px;">
-            <option value="1" selected>1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
-        <br><br>
-        <input type="button" Value="Quantidade de resistores" onclick="verResSerie()">
-        <br><br>
-        <div id="serieConteudo">
-
-            <div id="serie1cont">
-                <img src="serie1.jpg" height="150px"> <br><br>
-                R1<input type="NUMBER" id="11"> <br><br>
-            </div>
-            <div id="serie2cont">
-                <img src="serie2.jpg" height="150px"> <br><br>
-                R1<input type="NUMBER" id="serie21"> <br><br>
-                R2<input type="NUMBER" id="serie22"> <br><br>
-            </div>
-            <div id="serie3cont">
-                <img src="serie3.jpg" height="150px"> <br><br>
-                R1<input type="NUMBER" id="serie31"> <br><br>
-                R2<input type="NUMBER" id="serie32"> <br><br>
-                R3<input type="NUMBER" id="serie33"> <br><br>
-            </div>
-
-            <!-- <div id="serie4cont">
-                <img src="serie4.jpg" height="150px"> <br><br>
-                R1<input type="NUMBER" id="serie41"> <br><br>
-                R2<input type="NUMBER" id="serie42"> <br><br>
-                R3<input type="NUMBER" id="serie43"> <br><br>
-                R4<input type="NUMBER" id="serie44"> <br><br>
-            </div>
-            <div id="serie5cont">
-                <img src="serie5.jpg" height="150px"> <br><br>
-                R1<input type="NUMBER" id="serie41"> <br><br>
-                R2<input type="NUMBER" id="serie42"> <br><br>
-                R3<input type="NUMBER" id="serie43"> <br><br>
-                R4<input type="NUMBER" id="serie44"> <br><br>
-                R5<input type="NUMBER" id="serie45"> <br><br>
-            </div>
-            <div id="serie6cont">
-                <img src="serie6.jpg" height="150px"> <br><br>
-                R1<input type="NUMBER" id="serie61"> <br><br>
-                R2<input type="NUMBER" id="serie62"> <br><br>
-                R3<input type="NUMBER" id="serie63"> <br><br>
-                R5<input type="NUMBER" id="serie64"> <br><br>
-                R5<input type="NUMBER" id="serie65"> <br><br>
-                R6<input type="NUMBER" id="serie66"> <br><br>
-            </div>
-            <div id="serie7cont">
-                <img src="serie7.jpg" height="150px"> <br><br>
-                R1<input type="NUMBER" id="serie71"> <br><br>
-                R2<input type="NUMBER" id="serie72"> <br><br>
-                R3<input type="NUMBER" id="serie73"> <br><br>
-                R4<input type="NUMBER" id="serie74"> <br><br>
-                R5<input type="NUMBER" id="serie75"> <br><br>
-                R6<input type="NUMBER" id="serie76"> <br><br>
-                R7<input type="NUMBER" id="serie77"> <br><br>
-            </div>
-            <div id="serie8cont">
-                <img src="serie8.jpg" height="150px"> <br><br>
-                R1<input type="NUMBER" id="serie81"> <br><br>
-                R2<input type="NUMBER" id="serie82"> <br><br>
-                R3<input type="NUMBER" id="serie83"> <br><br>
-                R4<input type="NUMBER" id="serie84"> <br><br>
-                R5<input type="NUMBER" id="serie85"> <br><br>
-                R6<input type="NUMBER" id="serie86"> <br><br>
-                R7<input type="NUMBER" id="serie87"> <br><br>
-                R8<input type="NUMBER" id="serie88"> <br><br>
-            </div>
-            <div id="serie9cont">
-                <img src="serie9.jpg" height="150px"> <br><br>
-                R1<input type="NUMBER" id="serie91"> <br><br>
-                R2<input type="NUMBER" id="serie92"> <br><br>
-                R3<input type="NUMBER" id="serie93"> <br><br>
-                R4<input type="NUMBER" id="serie94"> <br><br>
-                R5<input type="NUMBER" id="serie95"> <br><br>
-                R6<input type="NUMBER" id="serie96"> <br><br>
-                R7<input type="NUMBER" id="serie97"> <br><br>
-                R8<input type="NUMBER" id="serie98"> <br><br>
-                R9<input type="NUMBER" id="serie99"> <br><br>
-            </div>
-            <div id="serie10cont">
-                R1<input type="NUMBER" id="serie101"> <br><br>
-                R2<input type="NUMBER" id="serie102"> <br><br>
-                R3<input type="NUMBER" id="serie103"> <br><br>
-                R4<input type="NUMBER" id="serie104"> <br><br>
-                R5<input type="NUMBER" id="serie105"> <br><br>
-                R6<input type="NUMBER" id="serie106"> <br><br>
-                R7<input type="NUMBER" id="serie107"> <br><br>
-                R8<input type="NUMBER" id="serie108"> <br><br>
-                R9<input type="NUMBER" id="serie109"> <br><br>
-                R10<input type="NUMBER" id="serie110"> <br><br>
-            </div> -->
-        </div>
-
-            <input type="button" Value="Cacular" onclick="calcularSerie()">
-            <p>Resistencia equivalente: </p>
-            <p id="resultadoSerie" style="font-size: 30px;"></p>
-            </p>
-        </div>
+        <img src="serie.jpg" height="150px"> <br><br>
+        R1<input type="NUMBER" id="serie1">
+        R2 <input type="NUMBER" id="serie2">
+        R3<input type="NUMBER" id="serie3"> <br><br>
+        <input type="button" Value="Cacular" onclick="calcularSerie()">
+        <p>Resistencia equivalente: </p>
+        <p id="resultadoSerie" style="font-size: 30px;"></p>
+        </p>
     </div>
 
     <div class="pararelo" id="pararelo">
+
         <p>
         <h1>Informe os Ohm (Ω)</h1>
         <h2>Pararelo</h2>
@@ -172,23 +74,74 @@
     </div>
 
     <div class="misto" id="misto">
+
         <p>
         <h1>Informe os Ohm (Ω)</h1>
         <h2>Misto</h2>
         <img src="misto.png" height="150px"> <br><br>
-        <p>Serie <br>
-            <input type="NUMBER" id="mistoS1">
-        </p>
-        <p>Pararelo1 <br>
-            <input type="NUMBER" id="mistoP2">
-        </p>
-        <p>Pararelo2 <br>
-            <input type="NUMBER" id="mistoP3"> <br><br>
-        </p>
+        Serie <input type="NUMBER" id="mistoS1">
+        Pararelo1 <input type="NUMBER" id="mistoP2">
+        Pararelo2 <input type="NUMBER" id="mistoP3"> <br><br>
         <input type="button" Value="Cacular" onclick="calcularmisto()">
         <p>Resistencia equivalente: </p>
         <p id="resultadoMisto" style="font-size: 30px;"></p>
         </p>
+    </div>
+
+    <div class="led" id="led">
+
+        <h1>Selecione a bateria e a cor do led</h1>
+        <p id="bolinha" style="margin-block-end: -5px; font-size: 40px;  margin-block-start: -10px;">
+            <i class="fa fa-lightbulb-o" style="font-size:36px;"></i>
+        </p>
+
+        <img src="ledDesl.png" height="150px" id="ledDesl">
+        <img src="ledLigado.png" height="150px" id="ledLig" class="ledLig">
+        <p style="margin-block-start: 0em;font-size: 24px;margin-block-end: -25px;" id="volts"> 0 V</p>
+        <ul>
+            <li>
+                <h3>Selecione a bateria desejada</h3>
+                <select id="bateriaT" style="height: 50px; width: 70px;">
+                    <option value="1.5" selected>1,5 V</option>
+                    <option value="2">2 V</option>
+                    <option value="5">5 V</option>
+                    <option value="9">9 V</option>
+                    <option value="12">12 V</option>
+                    <option value="15">15 V</option>
+                    <option value="20">20 V</option>
+                </select>
+            </li>
+            <li>
+                <h3>Selecione a cor do LED</h3>
+                <select id="ledT" style="height: 50px; width: 100px;">
+                    <option value="1.8" selected>Vermelho</option>
+                    <option value="2">Amarelo</option>
+                    <option value="2.5">Verde</option>
+                    <option value="3">Azul</option>
+
+                </select>
+            </li>
+        </ul>
+        <input type="button" Value="Cacular" onclick="calcularResistorLed()">
+        <p id="valorResistor" style="margin-block-start: 0em;font-size: 30px;margin-block-end: -25px;"></p>
+        <br><br>
+    </div>
+
+    <div class="corrente" id="corrente">
+        <h1>CORRENTE/TENSÃO</h1>
+        <h2>Para achar a CORRENTE digite o valor do resistor e a Tensão</h2>
+        Resistencia em OHM<input type="number" class="inputText" id="resistencia1">
+        Tensão em V<input type="number" class="inputText" id="tensao1"> <br><br>
+        <input type="button" value="Calcular Corrente" onclick="calcularCorrente()">
+        <h2 id="valorCorrente" style="color: darkblue;"> .</h2>
+        <br><br>
+
+        <h2>Para achar a TENSÃO digite o valor da corrente e o resistor</h2>
+        Corrente em A<input type="number" class="inputText" id="corrente2">
+        Resistencia em OHM<input type="number" class="inputText" id="resistencia2">
+        <br><br>
+        <input type="button" value="Calcular Tensão" onclick="calcularTensao()">
+        <h2 id="valorTensao" style="color: red"></h2>
     </div>
 
     <div class="tabela" id="tabela">
@@ -300,6 +253,7 @@
             </tr>
         </table>
     </div>
+
     <div class="calcularRes" id="calcularRes">
         <p>
         <h1>Cacular o valor do resistor - 4 Faixas</h1>
