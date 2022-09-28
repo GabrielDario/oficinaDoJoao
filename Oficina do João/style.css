@@ -1,6 +1,10 @@
-
+body {
+ background-image: url(background.jpg);
+ background-size: 1361px;
+}
+/*parametro de entrada*/
 .dropbtn , .dropbtn2 {
-  background-color: #3498DB;
+  background-color: #3498DB;/*Cor de fundo*/
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -8,15 +12,16 @@
   cursor: pointer;
 }
 
+/*dar cores no menu quando encostar o cursos */
 .dropbtn:hover, .dropbtn:focus ,.dropbtn2:hover, .dropbtn2:focus {
   background-color: #2980B9;
 }
-
+/* SUBABAS DO MENU */
 .dropdown ,.dropdown2 {
   position: relative;
-  display: inline-block;
+  display: inline-block ;
 }
-
+/* Organizando e modelando o submenu */
 .dropdown-content,.dropdown-content2 {
   display: none;
   position: absolute;
@@ -27,37 +32,46 @@
   z-index: 1;
 }
 
+/* Quando encostas nos submenus, organizar*/
 .dropdown-content a , .dropdown-content2 a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
-
+/* Quuando encostar no submenu diretamente , mudara de cor */
 .dropdown a:hover ,.dropdown2 a:hover{background-color: #ddd;}
 
+/* Mostrar quando ocorrer o evento */
 .show {display: block;}
-
+/* Cabeçalho dando aparencia */
 .cabecalho {
   text-align: center;
   font-style: italic;
   font-size: 60px;
+  text-decoration: none;
+  color: black;
 }
-.serie , .pararelo, .misto, .ledLig ,.led, .corrente{
+/* Todas essas divs não ira aparecer (Conteudo)*/
+.serie , .pararelo, .misto, .ledLig ,.led, .corrente, .tabela{
   text-align: center;
   display: none;
 }
-.corrente {
-  text-align: center;
+.serie p , .pararelo p, .misto p, .calcularRes p{
+  font-size: 30px;
+  -webkit-text-stroke: 2px black;
+    font-family: sans;
+    color: aliceblue;
 }
+/* Aumentando tamanho da caixa de texto */
 .inputText {
   width: 35px;
 }
+
 .tabela {
-  text-align: center;
-  display: none;
   float: left;
 }
+/* Cor e tipo da borda da tabela */
 .tabela td {
   border: 1px dotted blue;
 }
@@ -70,6 +84,7 @@
 tr {
   height: 30px;
 }
+
 .calcularRes {
   display: none;
   float: right;

@@ -13,24 +13,25 @@
 </head>
 
 <body>
-    <h1 class="cabecalho">Oficina do Jo<a href="batman.jpg" style="text-decoration: none;
-        color: black;">ã</a>o</h1>
+    <!--Começo do codigo-->
+    <h1 class="cabecalho">Oficina do João</h1>
     <div id="menu">
+        <!--Codigo do menu com a função do dropdown(serie,paralelo,misto)-->
         <div class="dropdown">
             <button onclick="myFunction()" class="dropbtn">Associação de resistores</button>
             <div id="myDropdown" class="dropdown-content">
-                <a href="#serie" id="serieBT" onclick="abrirSerie()">Série</a>
-                <a href="#paralelo" id="parareloBT " onclick="abrirPararelo()">Pararelo</a>
-                <a href="#misto" id="mistoBt" onclick="abrirMisto()">Misto</a>
+                <a href="#serie"onclick="abrirSerie()">Série</a>
+                <a href="#paralelo" onclick="abrirPararelo()">Pararelo</a>
+                <a href="#misto"onclick="abrirMisto()">Misto</a>
             </div>
         </div>
-
+ <!--Codigo do menu com a função do dropdown(corrente)-->
         <div class="dropdown2">
             <button onclick="myFunction2()" class="dropbtn2">Dimensionamento do resistor que
                 acompanha o led</button>
             <div id="myDropdown2" class="dropdown-content2">
-                <a href="#montar" id="serieBT" onclick="abrirMontar()">Montar com LED e Bateria</a>
-                <a href="#corrente" id="parareloBT " onclick="abrirCorrente()">Descobrir valor da corrente
+                <a href="#montar"onclick="abrirMontar()">Montar com LED e Bateria</a>
+                <a href="#corrente"onclick="abrirCorrente()">Descobrir valor da corrente
                     ou da tensão</a>
             </div>
         </div>
@@ -43,7 +44,7 @@
         </div>
     </div>
     </div>
-
+<!--Interface do calculo de serie-->
     <div class="serie" id="serie">
         <p>
         <h1>Informe os Ohm (Ω)</h1>
@@ -52,12 +53,13 @@
         R1<input type="NUMBER" id="serie1">
         R2 <input type="NUMBER" id="serie2">
         R3<input type="NUMBER" id="serie3"> <br><br>
-        <input type="button" Value="Cacular" onclick="calcularSerie()">
-        <p>Resistencia equivalente: </p>
-        <p id="resultadoSerie" style="font-size: 30px;"></p>
+        <input type="button" Value="Calcular" onclick="calcularSerie()">
+        <p id="resultadoSerie">Resistencia equivalente: </p>
+        <!--Saida do calculo de serie-->
+
         </p>
     </div>
-
+<!--Interface do calculo de paralelo-->
     <div class="pararelo" id="pararelo">
 
         <p>
@@ -67,12 +69,12 @@
         R1<input type="NUMBER" id="paralelo1">
         R2<input type="NUMBER" id="paralelo2">
         R3<input type="NUMBER" id="paralelo3"> <br><br>
-        <input type="button" Value="Cacular" onclick="calcularParalelo()">
-        <p>Resistencia equivalente: </p>
-        <p id="resultadoParalelo" style="font-size: 30px;"></p>
-        </p>
+        <input type="button" Value="Calcular" onclick="calcularParalelo()">
+        <!--Saida do calculo de paralelo-->
+        <p id="resultadoParalelo">Resistencia Equivalente: </p>
+        </p>    
     </div>
-
+<!--Interface do calculo de misto-->
     <div class="misto" id="misto">
 
         <p>
@@ -82,12 +84,13 @@
         Serie <input type="NUMBER" id="mistoS1">
         Pararelo1 <input type="NUMBER" id="mistoP2">
         Pararelo2 <input type="NUMBER" id="mistoP3"> <br><br>
-        <input type="button" Value="Cacular" onclick="calcularmisto()">
-        <p>Resistencia equivalente: </p>
-        <p id="resultadoMisto" style="font-size: 30px;"></p>
+        <input type="button" Value="Calcular" onclick="calcularmisto()">
+      
+        <!--Saida do calculo do misto-->
+        <p id="resultadoMisto">Resistencia Equivalente  </p>
         </p>
     </div>
-
+<!--interface do calculo do LED-->
     <div class="led" id="led">
 
         <h1>Selecione a bateria e a cor do led</h1>
@@ -100,6 +103,7 @@
         <p style="margin-block-start: 0em;font-size: 24px;margin-block-end: -25px;" id="volts"> 0 V</p>
         <ul>
             <li>
+                <!--Opçoes dadas para a bateria do calculo(Volts)-->
                 <h3>Selecione a bateria desejada</h3>
                 <select id="bateriaT" style="height: 50px; width: 70px;">
                     <option value="1.5" selected>1,5 V</option>
@@ -112,6 +116,7 @@
                 </select>
             </li>
             <li>
+                <!--Opçoes de cor dos leds-->
                 <h3>Selecione a cor do LED</h3>
                 <select id="ledT" style="height: 50px; width: 100px;">
                     <option value="1.8" selected>Vermelho</option>
@@ -122,32 +127,39 @@
                 </select>
             </li>
         </ul>
-        <input type="button" Value="Cacular" onclick="calcularResistorLed()">
+<!--Interface do calculo de tensão e corrente-->
+        <input type="button" Value="Calcular" onclick="calcularResistorLed()">
         <p id="valorResistor" style="margin-block-start: 0em;font-size: 30px;margin-block-end: -25px;"></p>
         <br><br>
     </div>
 
     <div class="corrente" id="corrente">
         <h1>CORRENTE/TENSÃO</h1>
+        <!--Corrente-->
         <h2>Para achar a CORRENTE digite o valor do resistor e a Tensão</h2>
-        Resistencia em OHM<input type="number" class="inputText" id="resistencia1">
+        Resistencia em OHM
+        <input type="number" class="inputText" id="resistencia1">
         Tensão em V<input type="number" class="inputText" id="tensao1"> <br><br>
         <input type="button" value="Calcular Corrente" onclick="calcularCorrente()">
-        <h2 id="valorCorrente" style="color: darkblue;"> .</h2>
+        <!--Saida do calculo de corrente-->
+        <h2 id="valorCorrente" style="color: darkblue;"></h2>
         <br><br>
-
+        <!--Tensão-->
         <h2>Para achar a TENSÃO digite o valor da corrente e o resistor</h2>
         Corrente em A<input type="number" class="inputText" id="corrente2">
         Resistencia em OHM<input type="number" class="inputText" id="resistencia2">
         <br><br>
         <input type="button" value="Calcular Tensão" onclick="calcularTensao()">
+        <!--Saida do calculo de tensão-->
         <h2 id="valorTensao" style="color: red"></h2>
     </div>
-
+<!--Começo do codigo das faixas do resistores-->
     <div class="tabela" id="tabela">
         <br><br>
         <table class="table">
+            <!--Tabelo das faixas-->
             <tr>
+                <!--Numeração-->
                 <td width="101">Cor</td>
                 <td width="113">1° Faixa</td>
                 <td width="140">2° Faixa</td>
@@ -155,14 +167,17 @@
                 <td width="85">N° de zeros/multiplicador</td>
                 <td width="85">Tolerância</td>
             </tr>
+            <!--Cores do fundo da tabela-->
+            <!--Preto-->
             <tr style="background:black;color:white;">
-                <td>PRETO</td>
+                <td>Preto</td>
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td>x1 Ω</td>
                 <td width="85"> </td>
             </tr>
+            <!--Marrom-->
             <tr style="background:#964b00;color:white;">
                 <td>Marrom</td>
                 <td>1</td>
@@ -171,6 +186,7 @@
                 <td>x10 Ω</td>
                 <td width="85">+/- 1% </td>
             </tr>
+            <!--Vermelho-->
             <tr style="background:red;color:black;">
                 <td>Vermelho</td>
                 <td>2</td>
@@ -179,6 +195,7 @@
                 <td>x100 Ω</td>
                 <td width="85">+/- 2% </td>
             </tr>
+            <!--Laranja-->
             <tr style="background:orangered;color:black;">
                 <td>Laranja</td>
                 <td>3</td>
@@ -187,6 +204,7 @@
                 <td>x1k Ω</td>
                 <td width="85"> </td>
             </tr>
+            <!--Amarelo-->
             <tr style="background:yellow;color:black;">
                 <td>Amarelo</td>
                 <td>4</td>
@@ -195,6 +213,7 @@
                 <td>x10k Ω</td>
                 <td width="85"> </td>
             </tr>
+            <!--Verde-->
             <tr style="background:green;color:black;">
                 <td>Verde</td>
                 <td>5</td>
@@ -203,6 +222,7 @@
                 <td>x100k Ω</td>
                 <td width="85">+/- .5% </td>
             </tr>
+            <!--Azul-->
             <tr style="background:blue;color:black;">
                 <td>Azul</td>
                 <td>6</td>
@@ -211,6 +231,7 @@
                 <td>x1M Ω</td>
                 <td width="85">+/- .25% </td>
             </tr>
+            <!--Violeta-->
             <tr style="background:violet;color:black;">
                 <td>Violeta</td>
                 <td>7</td>
@@ -219,6 +240,7 @@
                 <td>x10M Ω</td>
                 <td width="85">+/- 1.% </td>
             </tr>
+            <!--Cinza-->
             <tr style="background:gray;color:black;">
                 <td>Cinza</td>
                 <td>8</td>
@@ -227,6 +249,7 @@
                 <td></td>
                 <td width="85">+/- .05% </td>
             </tr>
+            <!--Branco-->
             <tr style="background:white;color:black;">
                 <td>Branco</td>
                 <td>9</td>
@@ -235,6 +258,7 @@
                 <td></td>
                 <td width="85"> </td>
             </tr>
+            <!--Ouro-->
             <tr style="background:gold;color:black;">
                 <td>Ouro</td>
                 <td> </td>
@@ -243,6 +267,7 @@
                 <td>x.1 Ω</td>
                 <td width="85">+/- 5% </td>
             </tr>
+            <!--Prata-->
             <tr style="background:silver;color:black;">
                 <td>Prata</td>
                 <td> </td>
@@ -253,12 +278,12 @@
             </tr>
         </table>
     </div>
-
+<!--Entrada das opçoes possiveis de escolha-->
     <div class="calcularRes" id="calcularRes">
         <p>
         <h1>Cacular o valor do resistor - 4 Faixas</h1>
         <img src="resistor.jpg" height="100px"> <br><br>
-
+<!--Faixa1-->
         <label>Faixa 1</label>
         <select id="faixa1">
             <option value="0" selected>Preto - 0</option>
@@ -273,6 +298,7 @@
             <option value="9">Branco - 9</option>
         </select>
         <br><br>
+        <!--Faixa2-->
         <label>Faixa 2</label>
         <select id="faixa2">
             <option value="0">Preto - 0</option>
@@ -287,6 +313,7 @@
             <option value="9">Branco - 9</option>
         </select>
         <br><br>
+        <!--Faixa3(Multiplicador)-->
         <label>Faixa 3 - Multiplicador</label>
         <select id="faixa3">
             <option value="0.01">Prata - 0.01 Ω</option>
@@ -301,7 +328,7 @@
             <option value="10000000">Violeta - 10M Ω</option>
         </select>
         <br><br>
-
+<!--Faixa4(Tolerância)-->
         <label>Tolerância</label>
         <select id="faixa4">
             <option value="0.1">Prata +/- 10%</option>
@@ -313,8 +340,9 @@
             <option value="0.0010">Violeta +/- 0.1%</option>
         </select>
         <br><br>
-        <input type="button" Value="Cacular" onclick="calcularResistor()">
+        <input type="button" Value="Calcular" onclick="calcularResistor()">
         <p>Valor do resistor</p>
+        <!--Saida do calculo de faixas-->
         <p id="resultadoResistor" style="font-size: 30px;"></p>
         <p id="resultadoResistor2" style="font-size: 30px;"></p>
         </p>

@@ -1,5 +1,5 @@
 
-
+//Puxando o dropdown do html para o js
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
@@ -8,7 +8,7 @@ function myFunction2() {
 }
 
 
-// Close the dropdown if the user clicks outside of it
+//feche o dropdowm se o usuario clicar fora dela
 window.onclick = function (event) {
     if (!event.target.matches('.dropbtn2')) {
         var dropdowns = document.getElementsByClassName("dropdown-content2");
@@ -21,24 +21,27 @@ window.onclick = function (event) {
         }
     }
 }
-
+//Abrir o dropdown da interface do calculo de serie
 function abrirSerie() {
     fecharTudo();
 
     var serie = document.getElementById("serie");;
     serie.style.display = "block";
 }
+//Abrir o dropdown da interface do calculo do paralelo
 function abrirPararelo() {
     fecharTudo();
     var pararelo = document.getElementById("pararelo");
 
     pararelo.style.display = "block";
 }
+//Abrir o dropdown da interface do calculo do misto
 function abrirMisto() {
     fecharTudo();
     var misto = document.getElementById("misto")
     misto.style.display = "block";
 }
+//Abrir o dropdown da tabela de faixas dos resistores 
 function abrirCores() {
     fecharTudo();
     var tabela = document.getElementById("tabela");
@@ -47,6 +50,8 @@ function abrirCores() {
     tabela.style.display = "block";
     calcularRes.style.display = "block";
 }
+
+//Abrir o dropdown da interface do calculo da tensão e da corrente
 function abrirMontar() {
     fecharTudo();
     var led = document.getElementById("led");
@@ -57,6 +62,7 @@ function abrirCorrente() {
     var corrente = document.getElementById("corrente");
     corrente.style.display = "block";
 }
+//Comando que permite quer as intrface sejam trocadas caso click em outra sendo assim fechando a anterior
 function fecharTudo() {
     var serie = document.getElementById("serie");
     var pararelo = document.getElementById("pararelo");
@@ -74,8 +80,10 @@ function fecharTudo() {
     misto.style.display = "none";
     calcularRes.style.display = "none";
 }
+//Codigo-calculo Serie
 function calcularSerie() {
-
+    //entrada-serie 
+    //puxando os valores do html para o java scrip
     var serie1 = document.getElementById("serie1").value;
     var serie2 = document.getElementById("serie2").value;
     var serie3 = document.getElementById("serie3").value;
@@ -85,11 +93,13 @@ function calcularSerie() {
     serie2 = Number(serie2);
     serie3 = Number(serie3);
     var resultadoSerie = Number(serie1 + serie2 + serie3);
-    pSerie.textContent = resultadoSerie + " Ω";
+    //saida-serie
+    pSerie.textContent = `Resistência Equivalente =  ${resultadoSerie} Ω`;
 
 }
+//Codigo-calculo Misto
 function calcularmisto() {
-
+    //entrada-misto
     var mistoS = document.getElementById("mistoS1").value;
     var mistoP1 = document.getElementById("mistoP2").value;
     var mistoP2 = document.getElementById("mistoP3").value;
@@ -102,40 +112,13 @@ function calcularmisto() {
     var RA = (1 / mistoP1) + (1 / mistoP2);
     RA = 1 / RA;
     RA = RA + mistoS;
-    console.log(RA)
-    Mmisto.textContent = RA.toFixed(2) + " Ω";
+    //saida-misto
+    Mmisto.textContent = `Resistência Equivalente =  ${RA.toFixed(2)} Ω`;
 
 }
-function calcularCorrente() {
-    var tensao = document.getElementById("tensao1").value;
-    var resistencia = document.getElementById("resistencia1").value;
-    var valorCorrente = document.getElementById("valorCorrente");
-    
-    tensao = Number(tensao);
-    resistencia = Number(resistencia);
-    var corrente = tensao / resistencia;
-
-
-    valorCorrente.textContent = `Nesse circuito, o valor da corrente será de ${corrente.toFixed(2)} A`;
-
-}
-
-function calcularTensao() {
-    var corrente = document.getElementById("corrente2").value;
-    var resistencia = document.getElementById("resistencia2").value;
-    var valorTensao = document.getElementById("valorTensao");
-    
-    corrente = Number(corrente);
-    resistencia = Number(resistencia);
-    var tensao = corrente * resistencia;
-
-
-    valorTensao.textContent = `Nesse circuito, o valor da Tensão será de ${tensao.toFixed(2)} V`;
-}
-
+//Codigo-calculo Paralelo
 function calcularParalelo() {
-    console.info("Foi");
-
+    //entrada-paralelo
     var pararelo1 = document.getElementById("paralelo1").value;
     var pararelo2 = document.getElementById("paralelo2").value;
     var pararelo3 = document.getElementById("paralelo3").value;
@@ -147,11 +130,43 @@ function calcularParalelo() {
     var resultadoParalelo = Number(resultadoParalelo);
     resultadoParalelo = (1 / pararelo1) + (1 / pararelo2) + (1 / pararelo3);
     resultadoParalelo = 1 / resultadoParalelo;
-    pPararelo.textContent = resultadoParalelo.toFixed(2) + " Ω";
+    //saida-paralelo
+    pPararelo.textContent = `Resistência Equivalente =  ${resultadoParalelo.toFixed(2)} Ω`;
 
 }
 
+//Codigo-calculo Corrente
+function calcularCorrente() {
+    //entrada-corrente
+    var tensao = document.getElementById("tensao1").value;
+    var resistencia = document.getElementById("resistencia1").value;
+    var valorCorrente = document.getElementById("valorCorrente");
+
+    tensao = Number(tensao);
+    resistencia = Number(resistencia);
+    var corrente = tensao / resistencia;
+
+    //saida-corrente
+    valorCorrente.textContent = `Nesse circuito, o valor da corrente será de ${corrente.toFixed(2)} A`;
+
+}
+//Codigo-calculo Tensão
+function calcularTensao() {
+    //entrada-tensão
+    var corrente = document.getElementById("corrente2").value;
+    var resistencia = document.getElementById("resistencia2").value;
+    var valorTensao = document.getElementById("valorTensao");
+
+    corrente = Number(corrente);
+    resistencia = Number(resistencia);
+    var tensao = corrente * resistencia;
+
+    //saida-tensão
+    valorTensao.textContent = `Nesse circuito, o valor da Tensão será de ${tensao.toFixed(2)} V`;
+}
+//Codigo-calculo dimensionamento do led
 function calcularResistorLed() {
+    //entrada-dimensionamento do led
     var bateriaT = document.getElementById("bateriaT").value;
     var ledT = document.getElementById("ledT").value;
 
@@ -179,6 +194,7 @@ function calcularResistorLed() {
         verificarCor();
     }
 }
+//Mostra o led na interface quando o resultado for enviado
 function verificarCor() {
     if (ledT.value == 1.8) {
         bolinha.style.color = "red";
@@ -198,8 +214,9 @@ function verificarCor() {
 
 
 }
-
+//Codigo-Calculo da faixas dos resistores
 function calcularResistor() {
+    //entrada-tabela de faixas
     var faixa1 = document.getElementById("faixa1").value;
     var faixa2 = document.getElementById("faixa2").value;
     var faixa3 = document.getElementById("faixa3").value;
@@ -220,9 +237,18 @@ function calcularResistor() {
     max = (calculo * faixa4) + calculo
     min = calculo - (calculo * faixa4)
 
+    if (calculo >= 1000 && calculo < 1000000) {
+        calculo = calculo / 1000
+        pResistor.textContent = ` ${calculo}k Ω com ${faixa4 * 100}% de tolerância`;
+        pResistor2.textContent = `Entre ${min.toFixed(2)} Ω e ${max.toFixed(2)} Ω`;
+    } else if (calculo >= 1000000) {
+        calculo = calculo / 1000000
+        pResistor.textContent = ` ${calculo}M Ω com ${faixa4 * 100}% de tolerância`;
+        pResistor2.textContent = `Entre ${min.toFixed(2)} Ω e ${max.toFixed(2)} Ω`;
 
-
-
-    pResistor.textContent = ` ${calculo.toFixed(2)} Ω com ${faixa4 * 100}% de tolerância`;
-    pResistor2.textContent = `Entre ${min.toFixed(2)} Ω e ${max.toFixed(2)} Ω`;
+    } else {
+        //saida-tabela de faixas
+        pResistor.textContent = ` ${calculo.toFixed(2)} Ω com ${faixa4 * 100}% de tolerância`;
+        pResistor2.textContent = `Entre ${min.toFixed(2)} Ω e ${max.toFixed(2)} Ω`;
+    }
 }
