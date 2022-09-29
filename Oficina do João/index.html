@@ -18,33 +18,33 @@
     <div id="menu">
         <!--Codigo do menu com a função do dropdown(serie,paralelo,misto)-->
         <div class="dropdown">
-            <button onclick="myFunction()" class="dropbtn">Associação de resistores</button>
+            <button class="dropbtn">Associação de resistores</button>
             <div id="myDropdown" class="dropdown-content">
-                <a href="#serie"onclick="abrirSerie()">Série</a>
+                <a href="#serie" onclick="abrirSerie()">Série</a>
                 <a href="#paralelo" onclick="abrirPararelo()">Pararelo</a>
-                <a href="#misto"onclick="abrirMisto()">Misto</a>
+                <a href="#misto" onclick="abrirMisto()">Misto</a>
             </div>
         </div>
- <!--Codigo do menu com a função do dropdown(corrente)-->
+        <!--Codigo do menu com a função do dropdown(corrente)-->
         <div class="dropdown2">
-            <button onclick="myFunction2()" class="dropbtn2">Dimensionamento do resistor que
+            <button class="dropbtn2">Dimensionamento do resistor que
                 acompanha o led</button>
             <div id="myDropdown2" class="dropdown-content2">
-                <a href="#montar"onclick="abrirMontar()">Montar com LED e Bateria</a>
-                <a href="#corrente"onclick="abrirCorrente()">Descobrir valor da corrente
+                <a href="#montar" onclick="abrirMontar()">Montar com LED e Bateria</a>
+                <a href="#corrente" onclick="abrirCorrente()">Descobrir valor da corrente
                     ou da tensão</a>
             </div>
         </div>
         <div class="dropdown">
-            <a onclick="abrirCores()"> <button onclick="" class="dropbtn">Identificador de resistores(Código de
+            <a onclick="abrirCores()"> <button class="dropbtn">Identificador de resistores(Código de
                     cores)</button>
 
-                <div id="myDropdown" class="dropdown-content">
+
             </a>
         </div>
     </div>
     </div>
-<!--Interface do calculo de serie-->
+    <!--Interface do calculo de serie-->
     <div class="serie" id="serie">
         <p>
         <h1>Informe os Ohm (Ω)</h1>
@@ -59,7 +59,7 @@
 
         </p>
     </div>
-<!--Interface do calculo de paralelo-->
+    <!--Interface do calculo de paralelo-->
     <div class="pararelo" id="pararelo">
 
         <p>
@@ -72,9 +72,9 @@
         <input type="button" Value="Calcular" onclick="calcularParalelo()">
         <!--Saida do calculo de paralelo-->
         <p id="resultadoParalelo">Resistencia Equivalente: </p>
-        </p>    
+        </p>
     </div>
-<!--Interface do calculo de misto-->
+    <!--Interface do calculo de misto-->
     <div class="misto" id="misto">
 
         <p>
@@ -85,27 +85,27 @@
         Pararelo1 <input type="NUMBER" id="mistoP2">
         Pararelo2 <input type="NUMBER" id="mistoP3"> <br><br>
         <input type="button" Value="Calcular" onclick="calcularmisto()">
-      
+
         <!--Saida do calculo do misto-->
-        <p id="resultadoMisto">Resistencia Equivalente  </p>
+        <p id="resultadoMisto">Resistencia Equivalente </p>
         </p>
     </div>
-<!--interface do calculo do LED-->
+    <!--interface do calculo do LED-->
     <div class="led" id="led">
 
         <h1>Selecione a bateria e a cor do led</h1>
-        <p id="bolinha" style="margin-block-end: -5px; font-size: 40px;  margin-block-start: -10px;">
-            <i class="fa fa-lightbulb-o" style="font-size:36px;"></i>
+        <p id="bolinha">
+            <i class="fa fa-lightbulb-o"></i>
         </p>
 
-        <img src="ledDesl.png" height="150px" id="ledDesl">
-        <img src="ledLigado.png" height="150px" id="ledLig" class="ledLig">
-        <p style="margin-block-start: 0em;font-size: 24px;margin-block-end: -25px;" id="volts"> 0 V</p>
+        <img src="ledDesl.png" id="ledDesl">
+        <img src="ledLigado.png" id="ledLig" class="ledLig">
+        <p id="volts"> 0 V</p>
         <ul>
             <li>
                 <!--Opçoes dadas para a bateria do calculo(Volts)-->
                 <h3>Selecione a bateria desejada</h3>
-                <select id="bateriaT" style="height: 50px; width: 70px;">
+                <select id="bateriaT">
                     <option value="1.5" selected>1,5 V</option>
                     <option value="2">2 V</option>
                     <option value="5">5 V</option>
@@ -118,7 +118,7 @@
             <li>
                 <!--Opçoes de cor dos leds-->
                 <h3>Selecione a cor do LED</h3>
-                <select id="ledT" style="height: 50px; width: 100px;">
+                <select id="ledT">
                     <option value="1.8" selected>Vermelho</option>
                     <option value="2">Amarelo</option>
                     <option value="2.5">Verde</option>
@@ -127,9 +127,9 @@
                 </select>
             </li>
         </ul>
-<!--Interface do calculo de tensão e corrente-->
+        <!--Interface do calculo de tensão e corrente-->
         <input type="button" Value="Calcular" onclick="calcularResistorLed()">
-        <p id="valorResistor" style="margin-block-start: 0em;font-size: 30px;margin-block-end: -25px;"></p>
+        <p id="valorResistor"></p>
         <br><br>
     </div>
 
@@ -142,7 +142,7 @@
         Tensão em V<input type="number" class="inputText" id="tensao1"> <br><br>
         <input type="button" value="Calcular Corrente" onclick="calcularCorrente()">
         <!--Saida do calculo de corrente-->
-        <h2 id="valorCorrente" style="color: darkblue;"></h2>
+        <h2 id="valorCorrente"></h2>
         <br><br>
         <!--Tensão-->
         <h2>Para achar a TENSÃO digite o valor da corrente e o resistor</h2>
@@ -151,9 +151,9 @@
         <br><br>
         <input type="button" value="Calcular Tensão" onclick="calcularTensao()">
         <!--Saida do calculo de tensão-->
-        <h2 id="valorTensao" style="color: red"></h2>
+        <h2 id="valorTensao"></h2>
     </div>
-<!--Começo do codigo das faixas do resistores-->
+    <!--Começo do codigo das faixas do resistores-->
     <div class="tabela" id="tabela">
         <br><br>
         <table class="table">
@@ -278,12 +278,12 @@
             </tr>
         </table>
     </div>
-<!--Entrada das opçoes possiveis de escolha-->
+    <!--Entrada das opçoes possiveis de escolha-->
     <div class="calcularRes" id="calcularRes">
         <p>
         <h1>Cacular o valor do resistor - 4 Faixas</h1>
         <img src="resistor.jpg" height="100px"> <br><br>
-<!--Faixa1-->
+        <!--Faixa1-->
         <label>Faixa 1</label>
         <select id="faixa1">
             <option value="0" selected>Preto - 0</option>
@@ -328,7 +328,7 @@
             <option value="10000000">Violeta - 10M Ω</option>
         </select>
         <br><br>
-<!--Faixa4(Tolerância)-->
+        <!--Faixa4(Tolerância)-->
         <label>Tolerância</label>
         <select id="faixa4">
             <option value="0.1">Prata +/- 10%</option>
@@ -343,11 +343,17 @@
         <input type="button" Value="Calcular" onclick="calcularResistor()">
         <p>Valor do resistor</p>
         <!--Saida do calculo de faixas-->
-        <p id="resultadoResistor" style="font-size: 30px;"></p>
-        <p id="resultadoResistor2" style="font-size: 30px;"></p>
+        <p id="resultadoResistor"></p>
+        <p id="resultadoResistor2"></p>
         </p>
 
     </div>
+    <footer>
+        <h1>Sistema avaliativo - Projeto Oficina do João</h1>
+        <h2>Curso de desenvolvimento de Sistemas - SENAI</h2>
+        <p>Autores: Gabriel Nascimento e Gabriel Dario</p>
+        
+    </footer>
 </body>
 
 </html>

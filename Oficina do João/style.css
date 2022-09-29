@@ -21,6 +21,7 @@ body {
   position: relative;
   display: inline-block ;
 }
+
 /* Organizando e modelando o submenu */
 .dropdown-content,.dropdown-content2 {
   display: none;
@@ -40,11 +41,15 @@ body {
   display: block;
 }
 /* Quuando encostar no submenu diretamente , mudara de cor */
-.dropdown a:hover ,.dropdown2 a:hover{background-color: #ddd;}
+.dropdown a:hover ,.dropdown a:hover{background-color: #ddd;}
 
+.dropdown2:hover .dropdown-content2 {display: block;}
 /* Mostrar quando ocorrer o evento */
 .show {display: block;}
 /* Cabeçalho dando aparencia */
+
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown2:hover .dropdown2-content {display: block;}
 .cabecalho {
   text-align: center;
   font-style: italic;
@@ -57,17 +62,42 @@ body {
   text-align: center;
   display: none;
 }
-.serie p , .pararelo p, .misto p, .calcularRes p{
+.serie p , .pararelo p, .misto p, .calcularRes p, #valorResistor, #valorCorrente, #valorTensao{
   font-size: 30px;
   -webkit-text-stroke: 2px black;
-    font-family: sans;
-    color: aliceblue;
+  font-family: sans;
+  color: cornflowerblue;
 }
 /* Aumentando tamanho da caixa de texto */
 .inputText {
   width: 35px;
 }
+#bolinha {
+  margin-block-end: -5px;
+   font-size: 40px;  
+   margin-block-start: -10px;
+}
+#bolinha i {
+  font-size:36px;
+}
+#bateriaT {
+  height: 50px;
+   width: 70px;
+}
+#volts {
+  margin-block-start: 0em;
+  font-size: 24px;
+  margin-block-end: -25px;
+}
+#ledT {
+  height: 50px; 
+  width: 100px;
+}
 
+.led img {
+  height: 150px;
+
+}
 .tabela {
   float: left;
 }
@@ -93,4 +123,20 @@ tr {
   display: inline-block;
   margin-left: 5%;
   margin-right: 5%;
+}
+#resultadoResistor , #resultadoResistor2{
+  font-size: 30px;
+}
+footer {
+  position: absolute;
+  bottom: -307px;
+  text-align: center;
+  width: 100%;
+  background-color: gray;
+}
+footer h1 {
+  font-family: cursive;
+}
+footer h2 {
+  font-family: monospace;
 }
