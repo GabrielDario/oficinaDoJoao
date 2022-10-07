@@ -1,7 +1,6 @@
 
 //Abrir o dropdown da interface do calculo de serie
 function abrirSerie() {
-
     fecharTudo();
 
     var serie = document.getElementById("serie");;
@@ -231,11 +230,12 @@ function calcularResistor() {
         pResistor2.textContent = `Entre ${min.toFixed(2)} Ω e ${max.toFixed(2)} Ω`;
     }
 }
-const audio = document.getElementById('button');
-audio.addEventListener('click', function(){
 
-    const audio = document.querySelector('audio')
+let audio = document.getElementById("audio");
 
-    audio.play
-
-    })
+function abrirAudio() {
+    const audio = new Audio('I am Batman.mp3');
+    audio.play();
+    console.log("abrir")
+}
+audio.addEventListener("click", abrirAudio());
