@@ -127,16 +127,20 @@ tr {
 #resultadoResistor , #resultadoResistor2{
   font-size: 30px;
 }
-footer {
-  position: absolute;
+.footer {
+  display: flow-root;;
   bottom: -307px;
   text-align: center;
   width: 100%;
   background-color: gray;
 }
-footer h1 {
+.footer h1 {
   font-family: cursive;
 }
-footer h2 {
+.footer h2 {
   font-family: monospace;
+}
+.cabecalho a {
+  text-decoration: none;
+  color: black;
 }

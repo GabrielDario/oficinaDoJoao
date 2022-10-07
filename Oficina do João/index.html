@@ -8,13 +8,14 @@
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
     <script src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    
     <title>Oficina do João</title>
 </head>
 
 <body>
     <!--Começo do codigo-->
-    <h1 class="cabecalho">Oficina do João</h1>
+    <h1 class="cabecalho" id="audio">Oficina do Jo<a href="batman.gif.opdownload">ã</a>o</h1>
+    <audio src='I am Batman.mp3' id=""></audio>
     <div id="menu">
         <!--Codigo do menu com a função do dropdown(serie,paralelo,misto)-->
         <div class="dropdown">
@@ -28,7 +29,7 @@
         <!--Codigo do menu com a função do dropdown(corrente)-->
         <div class="dropdown2">
             <button class="dropbtn2">Dimensionamento do resistor que
-                acompanha o led</button>
+                acompanha o LED</button>
             <div id="myDropdown2" class="dropdown-content2">
                 <a href="#montar" onclick="abrirMontar()">Montar com LED e Bateria</a>
                 <a href="#corrente" onclick="abrirCorrente()">Descobrir valor da corrente
@@ -47,7 +48,7 @@
     <!--Interface do calculo de serie-->
     <div class="serie" id="serie">
         <p>
-        <h1>Informe os Ohm (Ω)</h1>
+        <h1>Informe a resistência(Ω)</h1>
         <h2>Série</h2>
         <img src="serie.jpg" height="150px"> <br><br>
         R1<input type="NUMBER" id="serie1">
@@ -63,7 +64,7 @@
     <div class="pararelo" id="pararelo">
 
         <p>
-        <h1>Informe os Ohm (Ω)</h1>
+        <h1>Informe a resistência(Ω)</h1>
         <h2>Pararelo</h2>
         <img src="paralelo.jpg" height="150px"> <br><br>
         R1<input type="NUMBER" id="paralelo1">
@@ -71,7 +72,7 @@
         R3<input type="NUMBER" id="paralelo3"> <br><br>
         <input type="button" Value="Calcular" onclick="calcularParalelo()">
         <!--Saida do calculo de paralelo-->
-        <p id="resultadoParalelo">Resistencia Equivalente: </p>
+        <p id="resultadoParalelo">Resistência Equivalente: </p>
         </p>
     </div>
     <!--Interface do calculo de misto-->
@@ -81,19 +82,19 @@
         <h1>Informe os Ohm (Ω)</h1>
         <h2>Misto</h2>
         <img src="misto.png" height="150px"> <br><br>
-        Serie <input type="NUMBER" id="mistoS1">
+        Série <input type="NUMBER" id="mistoS1">
         Pararelo1 <input type="NUMBER" id="mistoP2">
         Pararelo2 <input type="NUMBER" id="mistoP3"> <br><br>
         <input type="button" Value="Calcular" onclick="calcularmisto()">
 
         <!--Saida do calculo do misto-->
-        <p id="resultadoMisto">Resistencia Equivalente </p>
+        <p id="resultadoMisto">Resistência Equivalente </p>
         </p>
     </div>
     <!--interface do calculo do LED-->
     <div class="led" id="led">
 
-        <h1>Selecione a bateria e a cor do led</h1>
+        <h1>Selecione a bateria e a cor do LED</h1>
         <p id="bolinha">
             <i class="fa fa-lightbulb-o"></i>
         </p>
@@ -137,7 +138,7 @@
         <h1>CORRENTE/TENSÃO</h1>
         <!--Corrente-->
         <h2>Para achar a CORRENTE digite o valor do resistor e a Tensão</h2>
-        Resistencia em OHM
+        Resistência em OHM
         <input type="number" class="inputText" id="resistencia1">
         Tensão em V<input type="number" class="inputText" id="tensao1"> <br><br>
         <input type="button" value="Calcular Corrente" onclick="calcularCorrente()">
@@ -348,12 +349,12 @@
         </p>
 
     </div>
-    <footer>
+    <div class="footer">
         <h1>Sistema avaliativo - Projeto Oficina do João</h1>
         <h2>Curso de desenvolvimento de Sistemas - SENAI</h2>
         <p>Autores: Gabriel Nascimento e Gabriel Dario</p>
         
-    </footer>
+    </div>
 </body>
 
 </html>
