@@ -238,4 +238,4 @@ function abrirAudio() {
     audio.play();
     console.log("abrir")
 }
-audio.addEventListener("click", abrirAudio());
+audio.addEventListener("click", abrirAudio);
